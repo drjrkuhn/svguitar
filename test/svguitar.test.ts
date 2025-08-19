@@ -457,7 +457,7 @@ describe('SVGuitarChord', () => {
         barres: [],
       })
       .draw()
-    }).toThrowError(/XXX/)
+    }).toThrow(/XXX/)
   })
 
   it('Should render text on fingers with a different color', () => {

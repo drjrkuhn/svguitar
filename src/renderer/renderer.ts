@@ -92,7 +92,7 @@ export abstract class Renderer {
   ): GraphcisElement
 
   protected static trianglePath(x: number, y: number, size: number): string {
-    return `M${x + size / 2} ${y} L${x + size} ${y + size} L${x} ${y + size}`
+    return `M${x + size / 2} ${y} L${x + size} ${y + size} L${x} ${y + size} Z`
   }
 
   protected static ngonPath(x: number, y: number, size: number, edges: number): string {
@@ -116,7 +116,7 @@ export abstract class Renderer {
 
     const lines = points.reduce((acc, [posX, posY]) => `${acc} L${posX} ${posY}`, '')
 
-    return `M${curX} ${curY} ${lines}`
+    return `M${curX} ${curY} ${lines} Z`
   }
 
   protected static toClassName(classes?: string | string[]): string {
